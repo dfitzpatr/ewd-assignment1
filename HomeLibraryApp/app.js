@@ -39,7 +39,8 @@ var LibraryApp = angular.module('homeLibraryApp', ['ngRoute']);
                 var result = AuthenticationService.login($scope.username, $scope.password);
             }
 
-          $scope.loginError =  $routeParams.loginError
+          $scope.loginError =  $routeParams.loginError;
+          $routeParams.loginError = "";
 
           }])
 
@@ -51,7 +52,7 @@ var LibraryApp = angular.module('homeLibraryApp', ['ngRoute']);
                 $location.path('/login/' );
             }
 
-          $scope.loginError = ""
+          $scope.loginError = "";
 
           }])
 	  
@@ -96,7 +97,7 @@ var LibraryApp = angular.module('homeLibraryApp', ['ngRoute']);
  
           $scope.addReview = function(){
    
-            $scope.media.review.push({
+            $scope.media.reviews.push({
               body: $scope.review.body,
               author: $scope.review.author,
               upvotes: 0
@@ -117,9 +118,9 @@ var LibraryApp = angular.module('homeLibraryApp', ['ngRoute']);
             getUserMedia : function(userId) {
              
               if (userId == "0") {
-                return $http.get('books/mediaListHomer.json')
+                return $http.get('library/mediaListHomer.json')
               } else {
-                return $http.get('books/mediaListMarge.json')
+                return $http.get('library/mediaListMarge.json')
               }
             }
             } 
@@ -133,14 +134,16 @@ var LibraryApp = angular.module('homeLibraryApp', ['ngRoute']);
 
                         login : function(username, password) {
                             
-                            $http.get('books/library.json').success(function(data){
+                            result = null
+
+                            $http.get('library/user.json').success(function(data){
 
                                 for (var i in data.Users) {
-                                    if (data.Users[i].username == username && data.Users[i].password == password ) {
+                                    if (data.Users[i].username == username && data.Users[i].password == password) {
                                         result = data.Users[i];
                                     }
                                 }    
-                                if (typeof(result) != "undefined"){
+                                if (typeof(result) != "undefined" || result != null){
                                     $location.path('/mediaList/' + result.id);
                                } else {
                                     $location.path('/login/' + "Invalid Login Details");

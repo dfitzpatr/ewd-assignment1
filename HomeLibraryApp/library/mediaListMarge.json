@@ -8,7 +8,7 @@
 		"type": "book",
         "upvotes" : 6, 
 		"imageUrl": "img/books/JackReacherMakeMe.jpg",
-		"comments": []
+		"reviews": []
 	},
 	{
 		"id": 1, 
@@ -19,6 +19,6 @@
 		"type": "book",
 	    "upvotes" : 10,
 		"imageUrl": "img/books/bloodSong.jpg",
-		"comments": []
+		"reviews": []
 	}
 ]
