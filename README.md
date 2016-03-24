@@ -1,28 +1,39 @@
 #Assignment 1 - AngularJS app.
 
-Name: ... your name ...
+Name: Declan Fitzpatrick
 
 ###Overview.
-...... A statement of the app concept and objectives (about 1/2 page) ........
+Developed a home library application. This application will give the family home the facility of register all media that exists in the home,
+the media can be associated to each user. User will have the facility to search for item or just review all items associated to them. 
+User will have option of sorting through list based on a number of headings e.g likes, type, genre, etc. 
+Users will also have facility to associate reviews to the individual media items. Also facility to agree ("like ") comments
 
 
  . . . . . List of user features (excluding user registration and authentication) . . . . 
  
- + Feature 1
- + Feature 2
- + Feature 3
- + etc
- + etc
+ + Take JSON input describing user media and display in home screen
+ + Allow user to sort user media based on number of headings
+ + allow user to search through user media
+ + logout
+ 
 
 ###Installation requirements.
 . . . .  List of software used to develop the app . . . . . . . 
 + AngularJS 1.x
 + Bootstrap 3
-+ etc
-+ etc 
 
+In root folder execute http-server
 
-. . . . . . Also, explain (to a third party) what steps one must take to run your app after cloning it from the repository, e.g. any non-standard software installation ; any environment setup; how to start app; where to view app in browser . . . . . . . 
+In browser insert "http://localhost:8080/HomeLibraryApp/"
+
+the following usernames and passwords are required
+
+username: homer@Simpson.com
+passsword: secret
+
+username: marge@Simpson.com
+passsword: secret
+
 
 ###Data Model Design.
 
@@ -30,11 +41,14 @@ Diagram of app's data model (see example below) AND/OR a sample of the test data
 
 ![][image1]
 
-Use meaningful sample data. Briefly explain any non-trivial issues.
+Following are JSON files used in application
+library\user.json
+library\mediaListHomer.json
+library\mediaListMarge.json
+
 
 ###App Design.
 
-A simple diagram showing the app's component design, in particular controllers and services (see example below).
 
 ![][image2]
 
@@ -47,14 +61,16 @@ A simple diagram showing the app's component design, in particular controllers a
 ###Routing.
 
 . . . . List each route supported and state the associated view . . . . . 
-+ /foos - displays all published foos
-+ /foos/:id - detail view of a particular foo (:id)
-+ etc
-+ etc
++ /login - login screen
++ /login/:loginError - login screen after login failure. Provides failure feedback 
++ /register - register user screen
++ /mediaList/:userId - screen showing a list of media associated to logged in user  
++ /mediaList/:userId/media-review/:mediaId - screen show and allowing user to enter review information
 
 ###Extra features
 
-. . . . . Briefly explain any non-standard features, functional or non-functional (e.g. user registration, authentication) developed for the app . . . . . .  
+Implemented a user login as well as associated authentication. Username and password entered is compared against details in user.json file.
+If comparision fails then user is returned to login screen.
 
 ###Independent learning.
 

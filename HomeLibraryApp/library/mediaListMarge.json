@@ -8,7 +8,14 @@
 		"type": "book",
         "upvotes" : 6, 
 		"imageUrl": "img/books/JackReacherMakeMe.jpg",
-		"reviews": []
+		"reviews": 	[
+						{
+							"body": "this is a good book",
+							"Author": "Marge",
+							"upvotes": 3
+						}
+
+					]
 	},
 	{
 		"id": 1, 

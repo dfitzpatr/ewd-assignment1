@@ -8,14 +8,14 @@ var LibraryApp = angular.module('homeLibraryApp', ['ngRoute']);
             controller: 'LoginCtrl',
             hideMenus: true 
           })
-          .when('/register', {
-            templateUrl: 'partials/register.html',
-            controller: 'registerCtrl',
-            hideMenus: true 
-          })
           .when('/login/:loginError', {
             templateUrl: 'partials/login.html',
             controller: 'LoginCtrl',
+            hideMenus: true 
+          })
+          .when('/register', {
+            templateUrl: 'partials/register.html',
+            controller: 'registerCtrl',
             hideMenus: true 
           })
           .when('/mediaList/:userId', {
@@ -143,7 +143,7 @@ var LibraryApp = angular.module('homeLibraryApp', ['ngRoute']);
                                         result = data.Users[i];
                                     }
                                 }    
-                                if (typeof(result) != "undefined" || result != null){
+                                if (!(typeof(result) == "undefined" || result == null){
                                     $location.path('/mediaList/' + result.id);
                                } else {
                                     $location.path('/login/' + "Invalid Login Details");
