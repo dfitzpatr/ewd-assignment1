@@ -7,7 +7,20 @@
 		"Genre": "Scifi",
 		"type": "book",
         "upvotes" : 5, 
-		"imageUrl": "img/books/hitchhikersGuide.jpg"
+		"imageUrl": "img/books/hitchhikersGuide.jpg",
+		"reviews": 	[
+						{
+							"body": "this is a good book",
+							"author": "Marge",
+							"upvotes": 3
+						},
+						{
+							"body": "this is a good triller",
+							"author": "Homer",
+							"upvotes": 5
+						}
+
+					]
 	},
 	{
 		"id": 1,
@@ -17,7 +30,20 @@
 		"Genre": "Scifi",
 		"type": "book",
 	    "upvotes" : 10,
-		"imageUrl": "img/books/TheLostFleet.jpg"
+		"imageUrl": "img/books/TheLostFleet.jpg",
+		"reviews": 	[
+						{
+							"body": "this is a good book",
+							"author": "Marge",
+							"upvotes": 3
+						},
+						{
+							"body": "this is a good triller",
+							"author": "Homer",
+							"upvotes": 5
+						}
+
+					]
 	},
 	{
 		"id": 2,
@@ -27,6 +53,19 @@
 		"Genre": "Action Adventure",
 		"type": "book",
 	    "upvotes" : 10,
-		"imageUrl": "img/books/EmpireWoundsofHonor.jpg"
+		"imageUrl": "img/books/EmpireWoundsofHonor.jpg",
+		"reviews": 	[
+						{
+							"body": "this is a good book",
+							"author": "Marge",
+							"upvotes": 3
+						},
+						{
+							"body": "this is a good triller",
+							"author": "Homer",
+							"upvotes": 5
+						}
+
+					]
 	}
 ]
