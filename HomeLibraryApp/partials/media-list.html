@@ -1,0 +1,87 @@
+<div>
+  <!-- ng-click="$event.preventDefault()" -->
+  <nav class="{{active}}" >
+
+    <table class="table table-bordered">
+        <tr>
+            <td> <h2 class="Title"> Home Library Application</h2> </td>
+            <!-- When a link in the menu is clicked, we set the active variable -->
+            <td> <a href="#/mediaList/{{UserId}}" class="home" ng-click="active='home'">Home</a>  </td>
+            <td> <a href="#/" class="logout" ng-click="active='logout'">Logout</a>  </td>
+            <td> 
+                  <div class="bar">
+                    <!-- Create a binding between the searchString model and the text field -->
+                    <input type="text" ng-model="searchString" placeholder="Enter search terms" />
+                  </div>  
+             </td>
+        </tr>
+    </table>
+
+  </nav>
+
+<!-- ng-controller="ContactsController" -->
+
+  <div  >
+                <table class="table table-bordered">
+        <thead>
+          <th class="image" ></th>
+          <th class="title">
+            <a href="#" ng-click="$event.preventDefault(); orderByField='title'; reverseSort = !reverseSort"> Title 
+                    <span ng-show="orderByField == 'title'">
+                    <span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th class="Author">
+            <a href="" ng-click="$event.preventDefault(); orderByField='Author'; reverseSort = !reverseSort"> Author
+                    <span ng-show="orderByField == 'Author'">
+                    <span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+
+          <th class="description">Description</th>
+
+          <th class="Genre">
+            <a href="" ng-click="$event.preventDefault(); orderByField='Genre'; reverseSort = !reverseSort"> Genre
+                    <span ng-show="orderByField == 'Genre'">
+                    <span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+
+          <th class="type">
+            <a href="#" ng-click="$event.preventDefault(); orderByField='type'; reverseSort = !reverseSort"> Type
+                    <span ng-show="orderByField == 'type'">
+                    <span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+
+          </th>
+          <th class="upvotes">
+            <a href="#" ng-click="$event.preventDefault(); orderByField='upvotes'; reverseSort = !reverseSort"> Likes
+                    <span ng-show="orderByField == 'upvotes'">
+                    <span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th class="id" ng-show=false>
+          </th>
+        </thead>
+
+        <tbody ng-repeat="media in mediaList | filter: searchString | orderBy:orderByField:reverseSort" >
+          <!-- Normal Mode Template -->
+        <tr>
+           <td> <a href="#/mediaList/{{UserId}}/media-review/{{media.id}}" class="thumb"><img ng-src="{{media.imageUrl}}"></a></td>
+           <td> <a href="#/mediaList/{{UserId}}/media-review/{{media.id}}">{{media.title}}</a> </td>
+           <td>{{media.Author}}</td>
+           <td>{{media.Description}}</td>
+           <td>{{media.Genre}}</td>
+           <td>{{media.type}}</td>
+           <td>
+                <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(media)"></span>
+                     {{media.upvotes}}
+            </td>
+           <td ng-show=false>{{media.id}}</td>
+        </tr>
+        </tbody>
+
+    </table>
+  </div>
+
+</div>

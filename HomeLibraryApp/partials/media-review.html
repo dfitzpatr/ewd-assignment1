@@ -1,0 +1,60 @@
+  <!-- ng-click="$event.preventDefault()" -->
+  <nav class="{{active}}" >
+
+    <table class="table table-bordered">
+        <tr>
+            <td> <h2 class="Title"> Home Library Application</h2> </td>
+            <!-- When a link in the menu is clicked, we set the active variable -->
+            <td> <a href="#/mediaList/{{UserId}}" class="home" ng-click="active='home'">Home</a>  </td>
+            <td> <a href="#/" class="logout" ng-click="active='logout'">Logout</a>  </td>
+            <td> 
+              <!--ng-show="post.link $state.current.name hide this -- >
+                  <div class="bar" ng-show="$scope.media != null">
+                    <!-- Create a binding between the searchString model and the text field -->
+                    <input type="text" ng-model="searchString" placeholder="Enter search terms" />
+                  </div>  
+             </td>
+        </tr>
+    </table>
+
+  </nav>
+
+
+ <div class="col-md-8 col-md-offset-2">
+      <div class="page-header">
+        <h3>
+          <a ng-show="media.link != null" href="{{media.title}}">
+            {{media.title}}
+          </a>
+          <span ng-hide="media.link != null">
+            {{post.title}}
+          </span>
+        </h3>
+      </div>
+
+      <div ng-repeat="review in media.review | orderBy:'-upvotes'">
+        <span class="glyphicon glyphicon-thumbs-up"
+          ng-click="incrementUpvotes(review)"></span>
+        {{review.upvotes}} - by {{review.author}}
+        <span style="font-size:20px; margin-left:10px;">
+          {{review.body}}
+        </span>
+      </div>
+
+      <form ng-submit="addReview()"
+        style="margin-top:30px;">
+        <h3>Add a new review</h3>
+        <div class="form-group">
+          <input type="text"
+          class="form-control"
+          placeholder="REview"
+          ng-model="review.body"></input>
+        </div>
+        <div class="form-group">
+          <input type="text"
+          class="form-control"
+          placeholder="Author"
+          ng-model="review.author"></input>
+        </div>
+        <button type="submit" class="btn btn-primary">Post</button>
+      </form>
