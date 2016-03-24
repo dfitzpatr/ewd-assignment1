@@ -143,7 +143,7 @@ var LibraryApp = angular.module('homeLibraryApp', ['ngRoute']);
                                         result = data.Users[i];
                                     }
                                 }    
-                                if (!(typeof(result) == "undefined" || result == null){
+                                if (!(typeof(result) == "undefined" || result == null)) {
                                     $location.path('/mediaList/' + result.id);
                                } else {
                                     $location.path('/login/' + "Invalid Login Details");

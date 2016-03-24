@@ -11,7 +11,7 @@
 		"reviews": 	[
 						{
 							"body": "this is a good book",
-							"Author": "Marge",
+							"author": "Marge",
 							"upvotes": 3
 						}
 
