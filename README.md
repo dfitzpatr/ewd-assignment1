@@ -58,6 +58,8 @@ library\mediaListMarge.json
 
 ![][image3]
 
+![][image4]
+
 ###Routing.
 
 . . . . List each route supported and state the associated view . . . . . 
@@ -78,4 +80,5 @@ If comparision fails then user is returned to login screen.
 
 [image1]: ./model.png
 [image2]: ./design.png
-[image3]: ./screen.png
+[image3]: ./screenLogin.png
+[image4]: ./screenHome.png
