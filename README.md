@@ -60,9 +60,13 @@ library\mediaListMarge.json
 
 ![][image4]
 
+![][image5]
+
+![][image6]
+
+
 ###Routing.
 
-. . . . List each route supported and state the associated view . . . . . 
 + /login - login screen
 + /login/:loginError - login screen after login failure. Provides failure feedback 
 + /register - register user screen
@@ -74,11 +78,10 @@ library\mediaListMarge.json
 Implemented a user login as well as associated authentication. Username and password entered is compared against details in user.json file.
 If comparision fails then user is returned to login screen.
 
-###Independent learning.
-
-. . . . . State the non-standard aspects of Angular (or other related technologies) that you researched and applied in this assignment . . . . .  
 
 [image1]: ./model.png
 [image2]: ./design.png
 [image3]: ./screenLogin.png
 [image4]: ./screenHome.png
+[image5]: ./screenAddReviews.png
+[image6]: ./screenRegister.png

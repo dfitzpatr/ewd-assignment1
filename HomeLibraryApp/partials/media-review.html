@@ -1,23 +1,13 @@
   <!-- ng-click="$event.preventDefault()" -->
-  <nav class="{{active}}" >
+  <div id="nav">
+  <ul>
+    <li> <a href="#/mediaList/{{UserId}}" class="home" ng-click="active='home'"> <h3 class="Title"> Home Library Application</h3> </a> </li>
+    <li> <a href=""ng-click="$event.preventDefault()"><h3></h3></a></li>
+    <li> <a href="#/" class="logout" ng-click="active='logout'"><h3>Logout</h3></a></li>
+    <li> <input type="text" ng-model="searchString" placeholder="Search for your items" /></li>
+  </ul>
+  </div>
 
-    <table class="table table-bordered">
-        <tr>
-            <td> <h2 class="Title"> Home Library Application</h2> </td>
-            <!-- When a link in the menu is clicked, we set the active variable -->
-            <td> <a href="#/mediaList/{{UserId}}" class="home" ng-click="active='home'">Home</a>  </td>
-            <td> <a href="#/" class="logout" ng-click="active='logout'">Logout</a>  </td>
-            <td> 
-              <!--ng-show="post.link $state.current.name hide this -- >
-                  <div class="bar" ng-show="false">
-                    <!-- Create a binding between the searchString model and the text field -->
-                    <input ng-show="false" type="text" ng-model="searchString" placeholder="Enter search terms" />
-                  </div>  
-             </td>
-        </tr>
-    </table>
-
-  </nav>
 
 
  <div class="col-md-8 col-md-offset-2">
